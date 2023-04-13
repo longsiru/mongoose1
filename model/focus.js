@@ -8,6 +8,7 @@ var FocusSchema = mongoose.Schema({
   pic: String,
   //redirect: String,
   //用set来自定义修饰符。
+  //get是调用的时候，运行我们的get
   redirect: {
     type: String,
     set(params) {
