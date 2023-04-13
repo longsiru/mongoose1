@@ -2,9 +2,9 @@
   "name": "mongoose1",
   "version": "1.0.0",
   "description": "",
-  "main": "news.js",
+  "main": "focus.js",
   "scripts": {
-    "devStart": "nodemon news.js"
+    "devStart": "nodemon focus.js"
   },
   "keywords": [],
   "author": "",
