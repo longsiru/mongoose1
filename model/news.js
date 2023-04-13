@@ -1,13 +1,17 @@
 var mongoose = require("./db.js");
 
 var NewsSchema = mongoose.Schema({
-  title: "string", //默认参数
+  //title: "string", //默认参数
+  title: {
+    type: String,
+    trim: true, //定义 mongoose模式修饰符 去掉空格。
+  },
   auther: String,
   pic: String,
   content: String,
   status: {
-    typr: Number,
-    //default: 1,
+    type: Number,
+    default: 1,
   },
 });
 
