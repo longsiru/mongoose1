@@ -5,6 +5,14 @@ var FocusSchema = mongoose.Schema({
     type: String,
     trim: true, //定义 mongoose模式修饰符 去掉空格。
     index: true, //普通索引 //uniqu:true 唯一索引
+    require: true, //数据校验//必须传入项。
+    maxlength: 10, //string
+    minlength: 1, //string
+    match: /^xw(.*)/, //输入数据的时候，前面要加xw，用在string类型
+    //自定义校验器。
+    validate: function (title) {
+      return title.lenfth >= 30;
+    },
   },
   pic: String,
   //redirect: String,
@@ -26,7 +34,10 @@ var FocusSchema = mongoose.Schema({
   },
   status: {
     type: Number,
-    default: 1,
+    default: 1, //默认值
+    enum: [0, 1, 2, 3], //status的值必须在对应的数组里面，注意枚举是用在string类型上的。
+    //max:9,//最大值。必须在number类型中使用
+    //min：0//最小值。
   },
 });
 
