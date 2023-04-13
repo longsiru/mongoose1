@@ -14,3 +14,9 @@ focus
       .catch((err) => console.log(err))
   )
   .catch((err) => console.log(err));
+
+//静态方法
+//FocusModel.findByTitle('new333',).then((docs)=>console.log(docs)).catch((err)=>console.log(err))
+
+//实例方法：
+//focus.print() //

@@ -4,6 +4,7 @@ var FocusSchema = mongoose.Schema({
   title: {
     type: String,
     trim: true, //定义 mongoose模式修饰符 去掉空格。
+    index: true, //普通索引 //uniqu:true 唯一索引
   },
   pic: String,
   //redirect: String,
@@ -28,5 +29,29 @@ var FocusSchema = mongoose.Schema({
     default: 1,
   },
 });
+
+//封装自定义的方法
+//静态方法，在schema中写,一定要加static
+//FocusSchema.static.findByTitle=function（title，cb）{
+//通过find方法获取title的数据， this关键字获取当前的model。
+//this.find({"title":title}, function(err,docs){
+//cb(err,docs)
+//})
+//}
+
+//实例方法
+//FocusSchema.methods.print=function(){
+//console.log("this is 实例方法")
+//conselo.log(this)  //访问实例里面加入的数据
+//}
+
+//扩展方法有两种
+//静态方法：定义一个类，直接通过类.一个方法名就能使用。一定要加static
+
+//实例方法：实例化之后才能访问，new了之后才可以。一定要加methods
+
+//ts中的扩展方法。
+//静态：static，类名访问静态方法。
+//实例：new一个，让new的那个调用方法。
 
 module.exports = mongoose.model("Focus", FocusSchema, "focus");
