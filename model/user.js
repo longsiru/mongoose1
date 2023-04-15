@@ -36,7 +36,7 @@ user.save(function (err) {
   console.log("成功");
 });
 
-// UserModel.findBySn('123456781',function(){})
+// UserModel.findBySn('sayo',function(){})
 
 /*
         UserModel.findBySn('123456782',function(err,docs){
